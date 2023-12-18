@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="smiling-water-drop-11549857218bovtski57z-removebg-preview.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Document</title>
+    
+    <title>Aqua Delivery Iligan City</title>
 </head>
 <style>
-
-body {
-  margin: 0; /* Reset default body margin */
-  
+body, html {
+  margin: 0;
+  padding: 0;
 }
-
 ul {
   list-style-type: none;
   left: 0;
@@ -39,7 +39,7 @@ li a {
   display: block;
   color: white;
   text-align: center;
-  padding: 14px 16px;
+  padding: 24px 30px;
   text-decoration: none;
 }
 
@@ -56,14 +56,12 @@ p.bg {
    -webkit-background-clip: text;
    -webkit-text-fill-color: transparent;
    font-family: "Lucida Handwriting";
-   
-
-
+   margin-top:0;
 }
 .main {
   padding: 16px;
-  margin-top: 30px;
-  height: 1500px; /* Used in this example to enable scrolling */
+  margin-top: 15px;
+  height: 1022px; /* Used in this example to enable scrolling */
 }
 .about {
   border: 1px solid gray;
@@ -117,7 +115,7 @@ p.bg {
   border-top-right-radius: 0;
   transform: rotate(-45deg);
   float: left;
-  margin-top: 50px;
+  margin-top: 30px;
   margin-left: 20px;
 
   background-size: cover; /* Add this line to make the background image cover the entire shape */
@@ -125,6 +123,9 @@ p.bg {
   border: 5px solid #33abfa;
   
 }
+.shape:hover {
+            transform: scaleX(1);
+        }
 
 
 input[type=text], select, textarea {
@@ -169,7 +170,7 @@ input[type=submit]:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  width: 99%;
   margin: 0;
   padding: 10px; /* add padding for spacing */
   overflow: hidden;
@@ -215,29 +216,40 @@ input[type=submit]:hover {
 .fa-instagram {
   background: #125688;
   color: white;
+
 }
 
-
-
+.lgo {
+    margin-bottom: -6.0%;
+    margin-left: -8.2%;
+}
+.about img {
+    filter: drop-shadow(0px 8px 16px rgba(0, 0, 0, 0.1)); /* Adjust the values as needed */
+            transition: transform 0.3s ease; 
+}
+.about img:hover {
+            transform: scaleX(-1);
+        }
 </style>
 <body>
     <div class="main">
 <ul>
   <li><a class="active" href="#home">Home</a></li>
-  <li><a href="#news">News</a></li>
+  <li><a href="#news">About</a></li>
   <li><a href="#contact">Contact</a></li>
-  <li><a href="#about">About</a></li>
+  <li><a href="#about">Order</a></li>
 </ul>
-
+<center>
+<img class="lgo" src="smiling-water-drop-11549857218bovtski57z-removebg-preview.png" alt="logo" width="30%">
 <div class="firstimg">
-
-    <center>
+ 
 <p class="bg">Best <br>Aqua <br>Delivery <br>in Iligan City</p>
 </center>
 </div>
 
 <div class="about">
 <h1>About us</h1>
+<center><img  src="bottle.png" alt="logo" width="10%"></center>
 <p><strong>Welcome to Best Aqua Delivery</strong> your trusted source for pure and refreshing water right at your doorstep in Iligan City. At Best Aqua, we understand the importance of staying hydrated with clean and high-quality water, and we are dedicated to making this essential resource easily accessible to you. <br><br>
 <strong> Our Commitment to Purity</strong> We take pride in delivering water that goes through rigorous purification processes, ensuring that every drop is free from impurities and contaminants. Our commitment to quality is unwavering, as we believe that your well-being starts with the water you consume. <br><br>
 
@@ -289,11 +301,11 @@ Choose Best Aqua Delivery for a hydration experience that combines quality, conv
             
 <div class="footer">
   <div class="footer-content">
-    <p class="footer-text">Footer</p>
+    <p class="footer-text">Created by: @Jeff</p>
   </div>
   <div class="social-icons">
-    <a href="#" class="fa fa-facebook"></a>
-    <a href="#" class="fa fa-instagram"></a>
+    <a href="https://www.facebook.com/jhaysziealek.ceballos" class="fa fa-facebook"></a>
+    <a href="https://www.facebook.com/jhaysziealek.ceballos" class="fa fa-instagram"></a>
   </div>
 </div>
 
