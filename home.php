@@ -52,7 +52,7 @@ p.bg {
    line-height: 130px;
    font-weight: 600;
    text-transform: uppercase;
-   background: url(1745072.gif) center 60%/ cover no-repeat;
+   background: url(https://media.tenor.com/8x5b-Zwr7IQAAAAC/slow-motion.gif.gif) center 60%/ cover no-repeat;
    -webkit-background-clip: text;
    -webkit-text-fill-color: transparent;
    font-family: "Lucida Handwriting";
@@ -61,7 +61,7 @@ p.bg {
 .main {
   padding: 16px;
   margin-top: 15px;
-  height: 1022px; /* Used in this example to enable scrolling */
+  height: 1022px; 
 }
 .about {
   border: 1px solid gray;
@@ -118,7 +118,7 @@ p.bg {
   margin-top: 30px;
   margin-left: 20px;
 
-  background-size: cover; /* Add this line to make the background image cover the entire shape */
+  background-size: cover;
   margin-right: 20px;
   border: 5px solid #33abfa;
   
@@ -172,7 +172,7 @@ input[type=submit]:hover {
   align-items: center;
   width: 99%;
   margin: 0;
-  padding: 10px; /* add padding for spacing */
+  padding: 10px; 
   overflow: hidden;
   background-image: linear-gradient(
       rgba(255, 255, 255, 0),
@@ -183,11 +183,11 @@ input[type=submit]:hover {
 
 .footer-content {
   text-align: center;
-  flex-grow: 1; /* to make it take up remaining space */
+  flex-grow: 1; 
 }
 
 .footer-text {
-  margin: 0; /* remove default margin */
+  margin: 0; 
 }
 
 .social-icons {
@@ -209,12 +209,12 @@ input[type=submit]:hover {
 }
 
 .fa-facebook {
-  background: #3B5998;
+  background: #6285f4;
   color: white;
 }
 
 .fa-instagram {
-  background: #125688;
+  background: #6285f4;
   color: white;
 
 }
@@ -224,8 +224,8 @@ input[type=submit]:hover {
     margin-left: -8.2%;
 }
 .about img {
-    filter: drop-shadow(0px 8px 16px rgba(0, 0, 0, 0.1)); /* Adjust the values as needed */
-            transition: transform 0.3s ease; 
+    filter: drop-shadow(0px 8px 16px rgba(0, 0, 0, 0.1)); 
+            transition: transform 0.4s ease; 
 }
 .about img:hover {
             transform: scaleX(-1);
@@ -237,7 +237,7 @@ input[type=submit]:hover {
   <li><a class="active" href="#home">Home</a></li>
   <li><a href="#news">About</a></li>
   <li><a href="#contact">Contact</a></li>
-  <li><a href="#about">Order</a></li>
+  <li><a href="about.html">Order</a></li>
 </ul>
 <center>
 <img class="lgo" src="smiling-water-drop-11549857218bovtski57z-removebg-preview.png" alt="logo" width="30%">
@@ -248,7 +248,6 @@ input[type=submit]:hover {
 </div>
 
 <div class="about">
-<h1>About us</h1>
 <center><img  src="bottle.png" alt="logo" width="10%"></center>
 <p><strong>Welcome to Best Aqua Delivery</strong> your trusted source for pure and refreshing water right at your doorstep in Iligan City. At Best Aqua, we understand the importance of staying hydrated with clean and high-quality water, and we are dedicated to making this essential resource easily accessible to you. <br><br>
 <strong> Our Commitment to Purity</strong> We take pride in delivering water that goes through rigorous purification processes, ensuring that every drop is free from impurities and contaminants. Our commitment to quality is unwavering, as we believe that your well-being starts with the water you consume. <br><br>
@@ -304,8 +303,8 @@ Choose Best Aqua Delivery for a hydration experience that combines quality, conv
     <p class="footer-text">Created by: @Jeff</p>
   </div>
   <div class="social-icons">
-    <a href="https://www.facebook.com/jhaysziealek.ceballos" class="fa fa-facebook"></a>
-    <a href="https://www.facebook.com/jhaysziealek.ceballos" class="fa fa-instagram"></a>
+    <a href="https://www.facebook.com/jhaysziealek.ceballos" class="fa fa-facebook"  target="_blank"></a>
+    <a href="https://www.facebook.com/jhaysziealek.ceballos" class="fa fa-instagram"  target="_blank"></a>
   </div>
 </div>
 
