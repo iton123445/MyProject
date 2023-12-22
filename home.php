@@ -9,10 +9,7 @@
     <title>Aqua Delivery Iligan City</title>
 </head>
 <style>
-body, html {
-  margin: 0;
-  padding: 0;
-}
+
 ul {
   list-style-type: none;
   left: 0;
@@ -225,7 +222,7 @@ input[type=submit]:hover {
 }
 .about img {
     filter: drop-shadow(0px 8px 16px rgba(0, 0, 0, 0.1)); 
-            transition: transform 0.4s ease; 
+            transition: transform 0.1s ease; 
 }
 .about img:hover {
             transform: scaleX(-1);
@@ -234,10 +231,11 @@ input[type=submit]:hover {
 <body>
     <div class="main">
 <ul>
-  <li><a class="active" href="#home">Home</a></li>
-  <li><a href="#news">About</a></li>
-  <li><a href="#contact">Contact</a></li>
-  <li><a href="about.html">Order</a></li>
+  <li><a class="active" href="home.php">Home</a></li>
+  <li><a href="about.html">About</a></li>
+  <li><a href="#Contact">Contact</a></li>
+  <li><a href="wc.php">Order Now!</a></li>
+  <li><a href="">Cart!</a></li>
 </ul>
 <center>
 <img class="lgo" src="smiling-water-drop-11549857218bovtski57z-removebg-preview.png" alt="logo" width="30%">
@@ -248,7 +246,7 @@ input[type=submit]:hover {
 </div>
 
 <div class="about">
-<center><img  src="bottle.png" alt="logo" width="10%"></center>
+<center><img  src="https://ofwnewsbeat.com/wp-content/uploads/2018/02/GQ-West-Launches-Aquabest-and-Laundrybest-SM-Sea-Residences-7.jpg" alt="logo" width="80%"></center>
 <p><strong>Welcome to Best Aqua Delivery</strong> your trusted source for pure and refreshing water right at your doorstep in Iligan City. At Best Aqua, we understand the importance of staying hydrated with clean and high-quality water, and we are dedicated to making this essential resource easily accessible to you. <br><br>
 <strong> Our Commitment to Purity</strong> We take pride in delivering water that goes through rigorous purification processes, ensuring that every drop is free from impurities and contaminants. Our commitment to quality is unwavering, as we believe that your well-being starts with the water you consume. <br><br>
 
@@ -280,7 +278,7 @@ Choose Best Aqua Delivery for a hydration experience that combines quality, conv
   <p><span>Rebecca Flex.</span><i> Rating: 4.5/5</i></p>
   <p>I stumbled upon Best Aqua Delivery a few weeks ago, and it's been a game-changer. The water quality is fantastic, and the delivery is consistently on time. What impressed me the most is the eco-friendly packaging. It's clear that they care about the environment. The website is user-friendly, but I'd love to see more variety in package options. Keep up the great work!</p>
 </div>
-<h1 class="header1">Contact Us</h1>
+<h1 class="header1" id="Contact">Contact Us</h1>
 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d505549.7735997128!2d124.414563!3d8.141368!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x325579b328c9540d%3A0xe6e208aba2f0d03b!2sIligan%20City%2C%20Lanao%20del%20Norte%2C%20Philippines!5e0!3m2!1sen!2sus!4v1702921690971!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
 <div class="containers">

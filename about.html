@@ -67,14 +67,11 @@ p {
 }
 body {
             font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
         }
         .container {
             max-width: 800px;
             margin: 50px auto;
             padding: 20px;
- 
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
@@ -88,7 +85,6 @@ body {
         .column {
             flex: 0 0 calc(33.33% - 20px);
             margin-bottom: 20px;
-
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -108,9 +104,10 @@ body {
 
         .steps {
             display: flex;
-            justify-content: space-evenly;
-            flex-wrap: wrap;
-        }
+    justify-content: center;
+    flex-wrap: nowrap;
+    flex-direction: column-reverse;
+}
 
         .step {
             flex: 0 0 calc(33.33% - 20px);
@@ -152,28 +149,98 @@ body {
   -webkit-text-fill-color: transparent;
   background-image: linear-gradient(101deg, #7676f2, #00d4ff);
 }
+.slider-img {
+            width: 300px; 
+            height: 600px; 
+            object-fit: cover; 
+            display: block;
+            margin: 0 auto;
+        }
+        .footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 99%;
+  margin: 0;
+  padding: 10px; 
+  overflow: hidden;
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0)
+    ),
+    linear-gradient(101deg, #7676f2, #00d4ff);
+}
+
+.footer-content {
+  text-align: center;
+  flex-grow: 1; 
+}
+
+.footer-text {
+  margin: 0; 
+}
+
+.social-icons {
+  display: flex;
+}
+
+.fa {
+  padding: 10px;
+  font-size: 13px;
+  width: 13px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+}
+
+.fa:hover {
+  opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #6285f4;
+  color: white;
+}
+
+.fa-instagram {
+  background: #6285f4;
+  color: white;
+
+}
 </style>
 <body>
     <div class="main">
         <ul>
-          <li><a class="active" href="#home">Home</a></li>
+          <li><a class="active" href="home.php">Home</a></li>
           <li><a href="#news">About</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="about.html">Order</a></li>
+          <li><a href="home.php#Contact">Contact</a></li>
+          <li><a href="wc.php">Order Now!</a></li>
+          <li><a href="">Cart!</a></li>
         </ul>
         <h1 class="header1" style="padding-top: 2%; margin-bottom: -3%;">About us </h1>
-    <img src="https://myfoodhub.files.wordpress.com/2012/06/alkaline-water-refilling-station.jpg" alt="Cinque Terre" style="width:50%">
+    <img class="slider-img"  src="https://myfoodhub.files.wordpress.com/2012/06/alkaline-water-refilling-station.jpg" alt="Cinque Terre" style="width:50%">
         <h1>Welcome to AquaFresh Delivery: Your Hydration, Delivered.</h1>
-        <p>n a world where convenience meets hydration, AquaFresh Delivery emerges as your trusted partner in quenching your thirst effortlessly. We understand the importance of clean and refreshing water in your daily life, and that's why we bring the AquaFresh Delivery water refilling system right to your doorstep.</p>
+        <p> where we seamlessly merge convenience with hydration, establishing ourselves as your steadfast companion in effortlessly quenching your thirst. Recognizing the pivotal role that clean and invigorating water plays in your daily life, AquaFresh Delivery introduces the revolutionary water refilling system right to your doorstep, setting a new standard in the realm of hydration.</p>
 
         <h2>Why AquaFresh Delivery?</h2>
-        <p>At AquaFresh, we've redefined the way you experience hydration. Our water refilling system ensures that you have access to pure, high-quality water whenever you need it. Say goodbye to the hassle of carrying heavy water bottles or worrying about running out of water. With AquaFresh Delivery, hydration is just a click away.</p>
+        <p>At AquaFresh, we've redefined the way you experience hydration. Our water refilling system ensures that you have access to pure, high-quality water whenever you need it. Say goodbye to the hassle of carrying heavy water bottles or worrying about running out of water. With AquaFresh Delivery, hydration is just a click away.</p><p>
       cation processes to guarantee that every drop you receive is free from impurities, ensuring the highest standards of quality.</p>
     
                     <p>Enjoy the convenience of scheduled deliveries tailored to your preferences. Customize your delivery frequency, choose your preferred water type, and leave the rest to us.</p>
 
                     <p>By opting for AquaFresh Delivery, you contribute to a sustainable future. Our commitment to reducing plastic waste means you get fresh, pure water in reusable containers, minimizing environmental impact.</p>
+                    <p>Our commitment to excellence extends beyond mere convenience. AquaFresh employs advanced purification processes that guarantee every drop you receive is free from impurities, upholding the highest standards of quality. Revel in the convenience of tailored deliveries that align with your preferences. Customize your delivery frequency, select your preferred water type, and leave the logistics to us.</p>
 
+                    <p>By choosing AquaFresh Delivery, you are not just investing in personal convenience; you are actively contributing to a sustainable future. Our dedication to reducing plastic waste ensures that you receive fresh, pure water in reusable containers, championing an eco-friendly approach that minimizes environmental impact.</p>
+                    
+                    <p>Curious about how it works? Simply peruse our selection of purified water options and effortlessly place your order online or through our user-friendly mobile app. Select a delivery schedule that seamlessly integrates with your lifestyle, and we'll ensure your water refilling system is replenished without you having to lift a finger. Revel in the ease of having clean water on tap, with our dedicated delivery team guaranteeing that your water refilling system is meticulously maintained for optimal performance.</p>
+                    
+                    <p>Embark on a journey of hassle-free hydration with AquaFresh Delivery today. Discover the joy of having pure, refreshing water at your fingertips and become part of our community of satisfied customers who have unequivocally chosen AquaFresh as their preferred water delivery service.</p>
+                    
+                    <p>Because your hydration matters to us, AquaFresh Delivery is where purity meets convenience, ensuring that you experience the epitome of hassle-free hydration.</p>
+                    
+        <br>
         <div class="containers">
             <div class="how-it-works">
                 <h2>How It Works:</h2>
@@ -198,6 +265,49 @@ body {
                 <p>Your hydration matters to us. AquaFresh Delivery – where purity meets convenience.</p>
         
             </div>
-        </div>
+              </div>
+              
+              <div class="footer">
+                <div class="footer-content">
+                  <p class="footer-text">Created by: @Jeff</p>
+                </div>
+                <div class="social-icons">
+                  <a href="https://www.facebook.com/jhaysziealek.ceballos" class="fa fa-facebook" target="_blank"></a>
+                  <a href="https://www.facebook.com/jhaysziealek.ceballos" class="fa fa-instagram" target="_blank"></a>
+                </div>
+              </div>
+              
+    </div>
+
 </body>
 </html>
+
+<script>
+
+    var images = [
+        'https://myfoodhub.files.wordpress.com/2012/06/alkaline-water-refilling-station.jpg',
+        'https://cvsu.edu.ph/wp-content/uploads/2022/10/530A5117-scaled.jpg', 
+        'https://netstorage-kami.akamaized.net/images/4700acaf794300f2.jpg?imwidth=900',
+        'https://i.shgcdn.com/30c4fe6d-b223-46f1-8394-623ea24addb3/-/format/auto/-/preview/3000x3000/-/quality/lighter/',
+        'https://files01.pna.gov.ph/source/2020/07/28/053a0571.jpg',
+        'https://web.z.com/ph/wp/wp-content/uploads/2022/11/AdobeStock_448944132-1.jpeg',
+        'https://lh5.googleusercontent.com/p/AF1QipPEMyzz2f6_EOvuuvRJ3zC2WiEwu_mJORPWnipO=w1440-h810-k-no',
+        'https://urbanoasis.la/wp-content/uploads/2019/06/house-water-system--e1561658557771.jpg',
+    ];
+
+    var currentImageIndex = 0;
+    var imgElement = document.querySelector('.slider-img');
+
+    function changeImage() {
+    
+        imgElement.src = images[currentImageIndex];
+
+        currentImageIndex++;
+        if (currentImageIndex >= images.length) {
+            currentImageIndex = 0;
+        }
+    }
+
+
+    setInterval(changeImage, 1500);
+</script>
