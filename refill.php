@@ -41,9 +41,50 @@ body {
     
   }
 }
+ul {
+  list-style-type: none;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  /* background-color: #333; */
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0)
+    ),
+    linear-gradient(101deg, #7676f2, #00d4ff);
+    position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 24px 30px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #6285f4;
+}
 </style>
 <body>
-<h2>Pick Your Gallon Size</h2>
+<ul>
+  <li><a class="active" href="home.php">Home</a></li>
+  <li><a href="about.html">About</a></li>
+  <li><a href="#Contact">Contact</a></li>
+  <li><a href="wc.php">Order Now!</a></li>
+  <li><a href="">Cart!</a></li>
+</ul>
+<br><br><br><br>
+<h2 align="center">Pick Your Gallon Size</h2>
 
   <div class="row">
     <div class="column" style="background-color:#eee;" align="center">
