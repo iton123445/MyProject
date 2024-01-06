@@ -8,7 +8,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url("bg3.png");
+  background-image: url("../image/bg3.png");
   background-size: cover;
   background-position: center;
   min-height: 700px;
