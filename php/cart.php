@@ -46,7 +46,7 @@ li a:hover {
 <body>
 <ul>
   <li><a class="active" href="home.php">Home</a></li>
-  <li><a href="about.html">About</a></li>
+  <li><a href="../about.html">About</a></li>
   <li><a href="#Contact">Contact</a></li>
   <li><a href="wc.php">Order Now!</a></li>
   <li><a href="cart.php">Cart!</a></li>

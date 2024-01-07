@@ -1,3 +1,9 @@
+<?php include 'config.php';
+
+$sql = "SELECT * FROM product";
+$result = $conn->query($sql);
+$conn->close();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +14,89 @@
     <title>Aqua Delivery Iligan City</title>
 </head>
 <link rel="stylesheet" type="text/css" href="../css/home.css">
+<style>
+.product-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
 
+        .product-card {
+            flex: 1; /* Equal-width columns */
+            max-width: 300px;
+            margin: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            display: flex; /* Use flexbox */
+            flex-direction: column; /* Stack children vertically */
+            align-items: center; /* Center children horizontally */
+            text-align: center; /* Center text within the container */
+        }
+
+        .product-image {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .product-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .product-description {
+            font-size: 14px;
+            color: #555;
+            margin-top: 5px;
+        }
+
+        .product-price {
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .buy-button {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .buy-button:hover {
+            background-color: #2980b9;
+        }
+        .sidebar {
+            display: none; /* Initially hide the sidebar */
+            position: fixed;
+            top: 65px;
+            right: 0;
+            width: 300px;
+            background-color: #f4f4f4;
+            padding: 20px;
+            box-shadow: -5px 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .remove-button {
+            cursor: pointer;
+            color: red;
+        }
+</style>
 <body>
     <div class="main">
 <ul>
@@ -16,7 +104,7 @@
   <li><a href="../about.html">About</a></li>
   <li><a href="#Contact">Contact</a></li>
   <li><a href="wc.php">Order Now!</a></li>
-  <li><a href="">Cart!</a></li>
+  <li><a href="cart.php">Cart!</a></li>
   <li><a href="logout.php">Logout</a></li>
 </ul>
 <center>
@@ -48,8 +136,79 @@
 
 </div>
 <h1 class="header1">BEST SELLERS</h1>
+<div class="product-container">
+        <?php
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                ?>
+            <div class="product-card">
+                    <img class="product-image" src="<?php echo $row['img']; ?>" alt="<?php echo $row['pname']; ?>">
+                    <div class="product-title"><?php echo $row['pname']; ?></div>
+                    <div class="product-description"><?php echo $row['pdesciption']; ?></div>
+                    <div class="product-price">$<?php echo $row['pprice']; ?></div>
+                    <button class="buy-button" onclick="addToCart(<?php echo $row['pid']; ?>, '<?php echo $row['pname']; ?>', <?php echo $row['pprice']; ?>)">Add to Cart</button>
+                </div>
+                <?php
+            }
+        } else {
+            echo "No products found.";
+        }
+        ?>
+    </div>
+    <div class="sidebar" id="cart-sidebar">
+      <form action="cart.php">
+    <h2 align="center">Cart List</h2>
+        <div id="cart-items"></div>
+        <button class="buy-button" >View Cart</button>
+        <button class="buy-button" >Proceed Checkout</button>
+        </form>
+    </div>
+    <script>
+        function addToCart(productId, productName, productPrice) {
+            var cartItemsContainer = document.getElementById('cart-items');
+            var sidebar = document.getElementById('cart-sidebar');
 
+            // Check if the item is already in the cart
+            var existingCartItem = document.querySelector(`[data-product-id="${productId}"]`);
 
+            if (existingCartItem) {
+                // If the item is already in the cart, increase the quantity
+                var quantityElement = existingCartItem.querySelector('.quantity');
+                quantityElement.textContent = parseInt(quantityElement.textContent) + 1;
+            } else {
+                // If the item is not in the cart, create a new cart item
+                var cartItem = document.createElement('div');
+                cartItem.className = 'cart-item';
+                cartItem.setAttribute('data-product-id', productId);
+                cartItem.innerHTML = `
+                    <span>${productName}</span>
+                    <span>$${productPrice}</span>
+                    <span class="quantity">1</span>
+                    <button class="remove-button" onclick="removeFromCart(${productId})">Remove</button>
+                `;
+                cartItemsContainer.appendChild(cartItem);
+            }
+
+            // Show the sidebar if there are items in the cart
+            sidebar.style.display = 'block';
+        }
+
+        function removeFromCart(productId) {
+            var cartItem = document.querySelector(`[data-product-id="${productId}"]`);
+            var cartItemsContainer = document.getElementById('cart-items');
+            var sidebar = document.getElementById('cart-sidebar');
+
+            if (cartItem) {
+                // Remove the cart item from the cart
+                cartItem.remove();
+
+                // Hide the sidebar if there are no items in the cart
+                if (cartItemsContainer.children.length === 0) {
+                    sidebar.style.display = 'none';
+                }
+            }
+        }
+    </script>
 <h1 class="header1">testimonial</h1>
 <div class="container">
   <div class="shape"></div>
