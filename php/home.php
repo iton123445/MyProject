@@ -47,6 +47,8 @@
 </div>
 
 </div>
+<h1 class="header1">BEST SELLERS</h1>
+
 
 <h1 class="header1">testimonial</h1>
 <div class="container">
