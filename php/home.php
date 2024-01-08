@@ -34,6 +34,7 @@ $result = $conn->query($sql);
             <?php
             if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
+                    
                     ?>
                     <div class="product-card">
                         <form action="insert_cart_items.php" method="post">
@@ -89,32 +90,37 @@ $result = $conn->query($sql);
     <a href="checkout.php"><button class="buy-button">Proceed Checkout</button></a>
 </div>
 
+<script>
+    var cartItems = <?php echo json_encode($cartItems); ?>;
+    if (cartItems.length > 0) {
+        document.getElementById('cart-sidebar').style.display = 'block';
 
-        <script>
-            var cartItems = <?php echo json_encode($cartItems); ?>;
-            if (cartItems.length > 0) {
-                document.getElementById('cart-sidebar').style.display = 'block';
+        // Display cart items in the sidebar
+        var cartItemsContainer = document.getElementById('cart-items');
+        cartItemsContainer.innerHTML = ''; // Clear previous content
 
-                // Display cart items in the sidebar
-                var cartItemsContainer = document.getElementById('cart-items');
-                cartItemsContainer.innerHTML = ''; // Clear previous content
+        cartItems.forEach(function (item) {
+            var cartItem = document.createElement('div');
+            cartItem.className = 'cart-item';
+            
+            // Calculate total price for the item
+            var total = item.quantity * item.pprice;
 
-                cartItems.forEach(function (item) {
-                    var cartItem = document.createElement('div');
-                    cartItem.className = 'cart-item';
-                    cartItem.innerHTML = `
-                        <span>${item.pname}</span>
-                        <span>$${item.pprice}</span>
-                        <span class="quantity">${item.quantity}</span>
-                        <form action="delete_cart_item.php" method="post">
-                            <input type="hidden" name="cartid" value="${item.cartid}">
-                            <button class="remove-button" type="submit">Remove</button>
-                        </form>
-                    `;
-                    cartItemsContainer.appendChild(cartItem);
-                });
-            }
-        </script>
+            cartItem.innerHTML = `
+                <span>${item.pname}</span>
+                <span>$${item.pprice}</span>
+                <span class="quantity">${item.quantity}</span>
+                <span class="total">$${total.toFixed(2)}</span> <!-- Display total price -->
+                <form action="delete_cart_item.php" method="post">
+                    <input type="hidden" name="cartid" value="${item.cartid}">
+                    <button class="remove-button" type="submit">Remove</button>
+                </form>
+            `;
+            cartItemsContainer.appendChild(cartItem);
+        });
+    }
+</script>
+
 <h1 class="header1">testimonial</h1>
 <div class="container">
   <div class="shape"></div>
