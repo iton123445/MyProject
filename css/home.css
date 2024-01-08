@@ -217,3 +217,86 @@ input[type=submit]:hover {
 .about img:hover {
             transform: scaleX(-1);
         }
+
+.product-container {
+            margin-top: 120px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        .product-card {
+            flex: 1; /* Equal-width columns */
+            max-width: 300px;
+            margin: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            display: flex; /* Use flexbox */
+            flex-direction: column; /* Stack children vertically */
+            align-items: center; /* Center children horizontally */
+            text-align: center; /* Center text within the container */
+        }
+
+        .product-image {
+            width: 150px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .product-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .product-description {
+            font-size: 14px;
+            color: #555;
+            margin-top: 5px;
+        }
+
+        .product-price {
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .buy-button {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .buy-button:hover {
+            background-color: #2980b9;
+        }
+        .sidebar {
+            display: none; /* Initially hide the sidebar */
+            position: fixed;
+            top: 65px;
+            right: 0;
+            width: 300px;
+            background-color: #f4f4f4;
+            padding: 20px;
+            box-shadow: -5px 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .remove-button {
+            cursor: pointer;
+            color: red;
+        }

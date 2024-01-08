@@ -1,3 +1,12 @@
+<?php
+include 'config.php';
+
+$cartItemsQuery = "SELECT c.cartid, c.pid, c.quantity, c.price, c.total, p.pname, p.pprice,p.img
+                   FROM cart c
+                   INNER JOIN product p ON c.pid = p.pid";
+$cartItemsResult = $conn->query($cartItemsQuery);
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,6 +50,59 @@ li a {
 li a:hover {
   background-color: #6285f4;
 }
+  .cart-items-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .cart-item {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            margin: 10px;
+            padding: 10px;
+            width: 300px;
+            text-align: center;
+        }
+
+        .cart-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        .item-details h3 {
+            margin: 0;
+        }
+
+        .item-details p {
+            margin: 5px 0;
+        }
+
+        .remove-button {
+            background-color: #ff4444;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+          .update-button {
+            background-color: #4285f4;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 5px;
+        }
+        
+        .quantity-input {
+            width: 50px;
+            text-align: center;
+        }
 </style>
 
 <body>
@@ -53,3 +115,34 @@ li a:hover {
 </ul>
 <br><br><br><br>
 <h2 align="center">Your Cart!</h2>
+<form action="update_quantity.php" method="post">
+ <div class="cart-items-container">
+            <?php
+            if ($cartItemsResult->num_rows > 0) {
+                while ($cartItem = $cartItemsResult->fetch_assoc()) {
+                    ?>
+                    <div class="cart-item">
+                        <img src="<?php echo $cartItem['img']; ?>" alt="<?php echo $cartItem['pname']; ?>">
+                        <div class="item-details">
+                            <h3><?php echo $cartItem['pname']; ?></h3>
+                             <p>
+                                    Quantity: 
+                                    <input type="number" class="quantity-input" name="quantity[<?php echo $cartItem['pid']; ?>]" value="<?php echo $cartItem['quantity']; ?>" min="1">
+                                </p>
+                            <p>Price: $<?php echo $cartItem['pprice']; ?></p>
+                            <p>Total: $<?php echo $cartItem['total']; ?></p>
+                        </div>
+                        <button class="update-button" onclick="updateQuantity(<?php echo $cartItem['pid']; ?>)">Update</button>
+                        <button class="remove-button" onclick="removeFromCart(<?php echo $cartItem['pid']; ?>)">Remove</button>
+                    </div>
+                    <?php
+                }
+            } else {
+                echo "<p>Your cart is empty.</p>";
+            }
+            ?>
+        </div>
+           </form>
+        <a href="checkout.php"><button class="buy-button">Proceed to Checkout</button></a>
+    </div>
+
