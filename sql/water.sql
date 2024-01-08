@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 06, 2024 at 10:04 PM
+-- Generation Time: Jan 08, 2024 at 04:58 AM
 -- Server version: 10.4.32-MariaDB
--- PHP Version: 8.0.30
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -34,7 +34,30 @@ CREATE TABLE `cart` (
   `price` int(50) NOT NULL,
   `total` int(50) NOT NULL,
   `ssid` int(11) NOT NULL,
-  `ss_createdat` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `ss_createdat` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `method` varchar(255) NOT NULL,
+  `cid` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `cart`
+--
+
+INSERT INTO `cart` (`cartid`, `pid`, `quantity`, `price`, `total`, `ssid`, `ss_createdat`, `method`, `cid`) VALUES
+(14, 3, '4', 10, 40, 0, '2024-01-08 03:42:50', 'cart', 0),
+(15, 2, '2', 5, 10, 0, '2024-01-08 03:42:53', 'cart', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `checkout`
+--
+
+CREATE TABLE `checkout` (
+  `orderid` int(11) NOT NULL,
+  `cid` int(11) NOT NULL,
+  `order_total` int(50) NOT NULL,
+  `order_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -129,6 +152,12 @@ ALTER TABLE `cart`
   ADD PRIMARY KEY (`cartid`);
 
 --
+-- Indexes for table `checkout`
+--
+ALTER TABLE `checkout`
+  ADD PRIMARY KEY (`orderid`);
+
+--
 -- Indexes for table `customer`
 --
 ALTER TABLE `customer`
@@ -154,7 +183,13 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `cartid` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `cartid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
+-- AUTO_INCREMENT for table `checkout`
+--
+ALTER TABLE `checkout`
+  MODIFY `orderid` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `customer`
