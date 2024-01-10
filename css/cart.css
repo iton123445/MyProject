@@ -1,0 +1,131 @@
+    ul {
+  list-style-type: none;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  /* background-color: #333; */
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0)
+    ),
+    linear-gradient(101deg, #7676f2, #00d4ff);
+    position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 24px 30px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #6285f4;
+}
+  .cart-items-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .cart-item {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            margin: 10px;
+            padding: 10px;
+            width: 300px;
+            text-align: center;
+        }
+
+        .cart-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        .item-details h3 {
+            margin: 0;
+        }
+
+        .item-details p {
+            margin: 5px 0;
+        }
+
+        .remove-button {
+            background-color: #ff4444;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+          .update-button {
+            background-color: #4285f4;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 5px;
+        }
+
+        .quantity-input {
+            width: 50px;
+            text-align: center;
+        }
+             .buy-button {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .buy-button:hover {
+            background-color: #2980b9;
+        }
+/* Your existing CSS remains unchanged */
+
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.cart-table th, .cart-table td {
+  
+    padding: 10px;
+    text-align: center;
+}
+
+.cart-table img {
+    max-width: 50px;
+    height: auto;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.cart-table td.grand-total-label {
+    text-align: right;
+}
+
+.cart-table td.grand-total-value {
+    text-align: left;
+}        .active {
+    background-color:#00d4ff;
+    color:#fff;
+  }
